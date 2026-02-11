@@ -1,0 +1,102 @@
+:root {
+    --bg-color: #FFFFFF;
+    --card-bg: #f4f7f9;
+    --text-color: #213A53;
+    --blue-infrabel: #025DA4;
+    --cyan-infrabel: #02BCF0;
+    --border-color: #ddd;
+    --option-bg: #FFFFFF;
+    --menu-bg: #213A53;
+}
+
+[data-theme="dark"] {
+    --bg-color: #1a2a3a;
+    --card-bg: #213A53;
+    --text-color: #FFFFFF;
+    --border-color: #3d5a7a;
+    --option-bg: #2c435e;
+    --menu-bg: #111d29;
+}
+
+* { box-sizing: border-box; }
+
+body { 
+    font-family: 'Segoe UI', Arial, sans-serif; 
+    background-color: var(--bg-color); 
+    color: var(--text-color); 
+    margin: 0; 
+    transition: 0.3s; 
+}
+
+/* Ajout d'un wrapper pour éviter les bords collés */
+.main-wrapper {
+    padding: 20px 15px; /* Espacement sur les côtés pour mobile */
+}
+
+.container { 
+    max-width: 800px; 
+    margin: auto; 
+}
+
+/* Menu Hamburger */
+.menu-btn {
+    position: fixed; top: 15px; left: 15px; font-size: 24px; 
+    background: var(--blue-infrabel); color: white; border: none; 
+    cursor: pointer; padding: 8px 12px; border-radius: 6px; z-index: 1000;
+}
+
+.sidenav {
+    height: 100%; width: 0; position: fixed; z-index: 2000; top: 0; left: 0;
+    background-color: var(--menu-bg); overflow-x: hidden; transition: 0.5s; padding-top: 60px;
+}
+
+.sidenav .menu-section { padding: 15px 25px; color: white; border-bottom: 1px solid #3d5a7a; }
+.sidenav a, .sidenav label { font-size: 18px; color: white; display: block; margin-bottom: 10px; text-decoration: none; }
+.sidenav .closebtn { position: absolute; top: 10px; right: 20px; font-size: 36px; }
+
+.btn-menu-action, .btn-link {
+    background: var(--blue-infrabel); color: white !important; border: none; 
+    padding: 12px; border-radius: 6px; text-align: center; cursor: pointer; 
+    font-weight: bold; width: 100%; display: block;
+}
+
+/* Quiz UI */
+.header { 
+    border-bottom: 3px solid var(--blue-infrabel); 
+    margin-bottom: 30px; 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: flex-end; 
+    padding-top: 50px; /* Espace pour le bouton menu */
+}
+
+.logo-text { font-size: clamp(24px, 6vw, 36px); font-weight: bold; color: var(--blue-infrabel); }
+
+.card { 
+    background: var(--card-bg); 
+    border-radius: 12px; 
+    padding: 20px; 
+    margin-bottom: 20px; 
+    border-left: 8px solid var(--blue-infrabel);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.option { 
+    display: block; 
+    padding: 14px; 
+    margin: 10px 0; 
+    border: 2px solid var(--border-color); 
+    border-radius: 8px; 
+    cursor: pointer; 
+    background: var(--option-bg);
+}
+
+.selected { border-color: var(--cyan-infrabel) !important; background-color: var(--blue-infrabel) !important; color: white !important; }
+
+.actions { display: grid; gap: 15px; margin-top: 30px; }
+button { background: var(--blue-infrabel); color: white; border: none; padding: 18px; border-radius: 8px; cursor: pointer; font-weight: bold; font-size: 16px; }
+
+#score-final { 
+    display: none; text-align: center; font-size: 24px; font-weight: bold; 
+    padding: 30px; margin-top: 25px; border-radius: 12px; 
+}

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infrabel Expert Quiz</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body data-theme="light">
+
+    <button class="menu-btn" onclick="toggleMenu()" aria-label="Menu">☰</button>
+
+    <div id="side-menu" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="toggleMenu()">&times;</a>
+        
+        <div class="menu-section">
+            <label id="txt-menu-lang">Langue :</label>
+            <select id="lang-select" onchange="changerLangue()">
+                <option value="fr">Français</option>
+                <option value="nl">Nederlands</option>
+                <option value="en">English</option>
+            </select>
+        </div>
+
+        <div class="menu-section">
+            <button onclick="toggleTheme()" class="btn-menu-action">🌓 Mode Jour/Nuit</button>
+        </div>
+
+        <div class="menu-section">
+            <a href="https://video.infrabel.be/learningdev/466992/Information+%26+Communication+Technology" target="_blank" class="btn-link">
+                🚀 Infrabel Learning
+            </a>
+        </div>
+    </div>
+
+    <div class="main-wrapper">
+        <div class="container">
+            <div class="header">
+                <div class="logo-text">INFR/ABEL</div>
+                <div class="doc-info">
+                    <strong>I-ICT Control Changes</strong><br>
+                    IICT-CHG-PRO-001-NL
+                </div>
+            </div>
+
+            <h1 id="txt-title">Quiz Expertise</h1>
+            <p id="txt-subtitle">Testez vos connaissances (10 questions aléatoires).</p>
+            
+            <div id="quiz-area"></div>
+            
+            <div class="actions">
+                <button id="btn-valider" onclick="validerQuiz()">VÉRIFIER MES RÉPONSES</button>
+                <button class="reload-btn" id="btn-reload" onclick="lancerQuiz()">NOUVELLES QUESTIONS</button>
+            </div>
+
+            <div id="score-final"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
